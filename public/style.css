@@ -1,0 +1,162 @@
+:root {
+    --bg-color: #0f172a;
+    --sidebar-bg: rgba(30, 41, 59, 0.7);
+    --text-color: #e2e8f0;
+    --accent-color: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --input-bg: rgba(51, 65, 85, 0.5);
+    --border-color: rgba(148, 163, 184, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 350px;
+    padding: 2rem;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1000;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+.logo p {
+    font-size: 0.875rem;
+    color: #94a3b8;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    font-size: 0.875rem;
+    color: #cbd5e1;
+}
+
+input {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    color: white;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+button {
+    background: var(--accent-color);
+    color: #0f172a;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.secondary-btn:hover {
+    background: rgba(56, 189, 248, 0.1);
+}
+
+.result-container {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: auto;
+    transition: opacity 0.3s ease;
+}
+
+.result-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.result-container h2 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+.result-value {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    line-height: 1.2;
+}
+
+.result-unit {
+    font-size: 0.875rem;
+    color: #cbd5e1;
+}
+
+.map-container {
+    flex: 1;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Leaflet Customization */
+.leaflet-container {
+    background: #0f172a;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quakecast</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Quakecast</h1>
+                <p>Seismic Intensity Predictor</p>
+            </div>
+
+            <form id="predict-form">
+                <div class="form-group">
+                    <label for="longitude">Longitude</label>
+                    <input type="number" id="longitude" step="any" placeholder="-149.9003" required>
+                </div>
+                <div class="form-group">
+                    <label for="latitude">Latitude</label>
+                    <input type="number" id="latitude" step="any" placeholder="61.2181" required>
+                </div>
+                <div class="form-group">
+                    <label for="magnitude">Magnitude</label>
+                    <input type="number" id="magnitude" step="0.1" placeholder="5.0" required>
+                </div>
+                <div class="form-group">
+                    <label for="depth">Depth (km)</label>
+                    <input type="number" id="depth" step="0.1" placeholder="10.0" required>
+                </div>
+
+                <button type="submit" id="predict-btn">
+                    <span>Predict Intensity</span>
+                </button>
+            </form>
+
+            <div id="result-container" class="result-container hidden">
+                <h2>Prediction Result</h2>
+                <div class="result-value" id="prediction-output">--</div>
+                <p class="result-unit">Ground Motion Intensity</p>
+                <button id="export-btn" class="secondary-btn" style="margin-top: 1rem; width: 100%;">Export CSV</button>
+            </div>
+        </aside>
+
+        <main class="map-container">
+            <div id="map"></div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
